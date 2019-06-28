@@ -15,9 +15,9 @@ def add_user():
 
 
 def login():
-    login = input('login: ')
+    user = input('login: ')
     password = input('senha: ')
-    if login in users and password == users[login][0]:
+    if user in users and password == users[user][0]:
         print('Usuário logado com sucesso.')
         print('''
 1-Upload
