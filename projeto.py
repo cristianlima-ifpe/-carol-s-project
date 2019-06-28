@@ -44,17 +44,11 @@ while True:
     print('''
 1-Cadastrar usuário
 2-Login
-3-Download de arquivos da nuvem
-4-Enviar arquivo para a nuvem
     ''')
     op = int(input('opção: '))
     if op == 1:
         add_user()
     elif op == 2:
         login()
-    elif op == 3:
-        download()
-    elif op == 4:
-        upload()
     else:
         print('Opção inválida.')
