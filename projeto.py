@@ -19,43 +19,25 @@ def login():
     password = input('senha: ')
     if login in users and password == users[login][0]:
         print('Usuário logado com sucesso.')
+        print('''
+1-Upload
+2-Download (os arquivos serão listados aqui)
+        ''')
+        op = int(input('Opção desejada:'))
+        if op == 1:
+            source = input('Nome do arquivo (caminho completo): ')
+            destination = (f'C:\\Users\CTRC2-M\Documents\server\\{user}')
+            shutil.copy(source, destination)
+        elif op == 2:
+            file_list = os.listdir(f'C:\\Users\CTRC2-M\Documents\server\\{user}')
+            for i in file_list:
+                print(i)
+            file_name = input('Nome do arquivo: ')
+            source = (f'C:\\Users\CTRC2-M\Documents\server\\{user}\\{file_name}')
+            destination = input('Destino (caminho completo): ')
+            shutil.copy(source, destination)
     else:
         print('Usuário ou senha inexistente. Tente novamente.')
-
-
-def host():
-    x = socket.gethostname()
-    host = x.split('-')
-    print(host[0])
-    
-    
-def download():
-    file_name = input('Nome do arquivo: ')
-    source = (f'C:\\Users\CTRC2-M\Documents\server\\{file_name}')
-    user = input('Nome do usuario: ')
-    if user in users:
-        destination = (f'C:\\Users\CTRC2-M\Documents\\{user}')
-        shutil.copy(source, destination)
-    else:
-        print('Usuário não cadastrado.')
-
-
-def upload():
-    file_name = input('Nome do arquivo: ')
-    user = input('Nome do usuário que irá fazer o uplaod: ')
-    if user in users:
-        source = (f'C:\\Users\CTRC2-M\Documents\\{user}\\{file_name}')
-        destination = (f'C:\\Users\CTRC2-M\Documents\server')
-        shutil.copy(source, destination)
-    else:
-        print('Usuário não cadastrado.')
-
-        
-def listing():
-    user = input('Usuário: ')
-    files = os.listdir(f'C:\\Users\CTRC2-M\Documents\server\\{user}')
-    for i in files:
-        print(i)
     
 
 while True:
