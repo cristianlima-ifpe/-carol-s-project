@@ -1,5 +1,4 @@
 import os
-import socket
 import shutil
 users = {'phablo': ['123'], 'cristian': ['123']}
 
@@ -21,7 +20,7 @@ def login():
         print('Usuário logado com sucesso.')
         print('''
 1-Upload
-2-Download (os arquivos serão listados aqui)
+2-Download (os arquivos serão listados.)
         ''')
         op = int(input('Opção desejada:'))
         if op == 1:
