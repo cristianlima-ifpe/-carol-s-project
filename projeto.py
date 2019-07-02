@@ -1,7 +1,8 @@
 import os
 import shutil
 users = {'phablo': ['123'], 'cristian': ['123']}
-
+#host = os.path.expanduser("~\\")
+#os.mkdir(f'{host}\Desktop\server\\{user}')
 
 def add_user():
     user = input('usuário: ')
