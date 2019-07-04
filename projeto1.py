@@ -1,6 +1,5 @@
 import projeto as fc
 
-
 while True:
     print('''
 1-Cadastrar usuário
